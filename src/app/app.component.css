@@ -1,0 +1,44 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin-top: 15px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px #ccc;
+    color: #646464;
+}
+
+.add {
+    position: fixed;
+    outline: none;
+    border: 2px solid #5c5b5b;
+    /* resize: none; */
+}
+
+.add:focus, .add:active {
+    border-color: #00ccff;
+}
+
+.actions {
+    display: none;
+}
+
+.edit {
+    margin-right: 5px;
+}
+
+.details-show {
+    display: block;
+}
