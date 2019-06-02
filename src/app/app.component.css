@@ -1,6 +1,24 @@
+@import '../assets/css/all.css';
+
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    text-transform: uppercase;
+    background: #c21010;
+    background: linear-gradient( #581212, #c21010 );
+    color: #aa7979;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 30px 15px;
+} 
+
+textarea {
+    border-radius: 5px;
 }
 
 .todo-list {
@@ -20,15 +38,49 @@ header {
     color: #646464;
 }
 
+.title {
+    padding: 10px;
+    line-height: 20px;
+    font-size: 18px;
+}
+
 .add {
     position: fixed;
+    top: 30%;
     outline: none;
     border: 2px solid #5c5b5b;
+    transition: border 0.3s ease-in;
     /* resize: none; */
 }
 
 .add:focus, .add:active {
-    border-color: #00ccff;
+    border-color: #c21010;
+}
+
+.wrap-details {
+    display: flex;
+    justify-content: center;
+}
+
+.details, .remove, .edit-btn {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #c21010;
+    background: linear-gradient(135deg, #581212, #c21010 60%, #ff0000);
+    color: #d8d6d6;
+    border: none;
+    box-shadow: 0 0 10px #363636;
+    transition: 0.2s all ease-in;
+}
+
+.edit-btn {
+    margin-right: 15px;
+}
+
+.details:hover, .remove:hover {
+    box-shadow: 0 0 10px #969595;
 }
 
 .actions {
@@ -36,7 +88,14 @@ header {
 }
 
 .edit {
-    margin-right: 5px;
+    margin: 0 15px;
+    outline: none;
+    border: 2px solid #5c5b5b;
+    transition: border 0.3s ease-in;
+}
+
+.edit:focus, .edit:active {
+    border-color: #c21010;
 }
 
 .details-show {

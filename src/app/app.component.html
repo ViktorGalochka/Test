@@ -2,15 +2,18 @@
   <h1>{{title}}</h1>
 </header>
 <main>
-  <textarea class="add" type="text" (keydown.enter)="add(append)" #append></textarea>
+  <textarea class="add" type="text" (keydown.enter)="add(append)" placeholder="Add new recipe" #append></textarea>
   <section class="todo-list" *ngIf="todos.length > 0">
     <div class="todo-item" *ngFor="let todo of todos">
-     <span class="title">{{todo.recipe}}</span>
-     <button class="details" (click) = "changeCustoms(todo)">Details</button>
-     <div class="actions" [ngClass] ="{'details-show':todo.isVisible}">
-       <input class="edit" type="text" (keydown.enter)="edit(content,todo)" placeholder="edit" #content>
-       <button class="remove" (click)="remove(todo)">Remove</button>
-     </div>
+      <span class="title">{{todo.recipe}}</span>
+      <div class="wrap-details">
+        <button class="details" (click) = "changeCustoms(todo)">{{todo.details}}</button>
+        <div class="actions" [ngClass] ="{'details-show':todo.isVisible}">
+          <textarea class="edit" type="text" (keydown.enter)="edit(content,todo)" placeholder="Edit" #content></textarea>
+          <button class="edit-btn" (click)="edit(content,todo)">Edit</button>
+          <button class="remove" (click)="remove(todo)">Remove</button>
+        </div>
+      </div>
     </div>
   </section>
 </main>
