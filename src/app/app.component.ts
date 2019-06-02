@@ -49,7 +49,9 @@ export class AppComponent {
   edit(change,todo) {
     let index = this.todos.indexOf(todo);
     if(index > -1) {
-      this.todos.splice(index,1,{recipe:change.value, isVisible : false, details: "Details"});
+      if(change.value !="" ) {
+        this.todos.splice(index,1,{recipe:change.value, isVisible : false, details: "Details"});
+      }
     }
     console.log(this.todos);
   }
