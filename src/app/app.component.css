@@ -59,6 +59,11 @@ main {
 .method {
     font-size: 18px;
     margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.ingredients {
+    overflow: hidden;
 }
 
 .ingredients-heading, .method-heading {
@@ -74,7 +79,6 @@ textarea, input{
     border: 2px solid #5c5b5b;
     box-shadow: 0 0 5px #a09f9f;
     transition: border 0.3s ease-in;
-    /* resize: none; */
 }
 
 textarea {
@@ -168,12 +172,14 @@ textarea:focus, textarea:active, input:focus, input:active {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 770px) {
     .add-form input, .add-form textarea {
-        width: 80%;
+        width: 85%;
         margin: 10px 0;
     }
-    
+}
+
+@media (max-width: 576px) {
     .todo-item button {
         width: 80px;
     }

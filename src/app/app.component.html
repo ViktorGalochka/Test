@@ -4,7 +4,7 @@
 <main>
   <form class="add-form">
     <input type="text" class="dish-name" placeholder="Dish" #dish>
-    <input type="text" placeholder="Ingridients" #ingridients>
+    <textarea type="text" placeholder="Ingridients" #ingridients></textarea>
     <textarea class="add-recipe" type="text" placeholder="Recipe" #recipe></textarea>
     <button class="add-btn" (click)="add(dish,ingridients,recipe)" type="button">Add</button>
   </form>
@@ -17,7 +17,7 @@
         <button class="details" (click) = "changeCustoms(todo)">{{todo.details}}</button>
         <div class="actions" [ngClass] ="{'details-show':todo.isVisible}">
           <input type="edit-dish-name" placeholder="Edit dish" #editDish>
-          <input type="text" placeholder="Edit ingridients" #editIngridients>
+          <textarea type="text" placeholder="Edit ingridients" #editIngridients></textarea>
           <textarea class="edit-recipe" type="text" placeholder="Edit method" #editRecipe></textarea>
           <button class="edit-btn" (click)="edit(editDish,editIngridients,editRecipe,todo)">Edit</button>
           <button class="remove" (click)="remove(todo)">Remove</button>
