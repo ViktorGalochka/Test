@@ -2,15 +2,24 @@
   <h1>{{title}}</h1>
 </header>
 <main>
-  <textarea class="add" type="text" (keydown.enter)="add(append)" placeholder="Add new recipe" #append></textarea>
+  <form class="add-form">
+    <input type="text" class="dish-name" placeholder="Dish" #dish>
+    <input type="text" placeholder="Ingridients" #ingridients>
+    <textarea class="add-recipe" type="text" placeholder="Recipe" #recipe></textarea>
+    <button class="add-btn" (click)="add(dish,ingridients,recipe)" type="button">Add</button>
+  </form>
   <section class="todo-list" *ngIf="todos.length > 0">
     <div class="todo-item" *ngFor="let todo of todos">
-      <span class="title">{{todo.recipe}}</span>
+      <h2 class="dish">{{todo.dish}}</h2>
+      <p class="ingredients"><span class="ingredients-heading">Ingredients: </span>{{todo.ingredients}}</p>
+      <p class="method"><span class="method-heading">Method: </span>{{todo.recipe}}</p>
       <div class="wrap-details">
         <button class="details" (click) = "changeCustoms(todo)">{{todo.details}}</button>
         <div class="actions" [ngClass] ="{'details-show':todo.isVisible}">
-          <textarea class="edit" type="text" (keydown.enter)="edit(content,todo)"placeholder="Edit" #content></textarea>
-          <button class="edit-btn" (click)="edit(content,todo)">Edit</button>
+          <input type="edit-dish-name" placeholder="Edit dish" #editDish>
+          <input type="text" placeholder="Edit ingridients" #editIngridients>
+          <textarea class="edit-recipe" type="text" placeholder="Edit" #editRecipe></textarea>
+          <button class="edit-btn" (click)="edit(editDish,editIngridients,editRecipe,todo)">Edit</button>
           <button class="remove" (click)="remove(todo)">Remove</button>
         </div>
       </div>

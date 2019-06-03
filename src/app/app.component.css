@@ -20,12 +20,6 @@ main {
     padding: 30px 15px;
 } 
 
-textarea {
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-}
-
 .todo-list {
     display: flex;
     flex-direction: column;
@@ -41,34 +35,59 @@ textarea {
     padding: 15px;
     border: 2px solid #c21010;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 0 0 5px #a09f9f;
     color: #646464;
 }
 
-.title {
+.todo-item p {
+    margin-top: 10px;
     padding: 10px;
     line-height: 20px;
-    font-size: 18px;
 }
 
-.add {
-    width: 50%;
+.todo-item span {
+    color: #c21010;
+}
+
+.dish {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #c21010;
+}
+
+.method {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ingredients-heading, .method-heading {
+    font-style: italic;
+}
+
+textarea, input{
+    margin: 0 5px;
+    padding: 5px;
     outline: none;
+    border-radius: 5px;
+    font-size: 16px;
     border: 2px solid #5c5b5b;
+    box-shadow: 0 0 5px #a09f9f;
     transition: border 0.3s ease-in;
     /* resize: none; */
 }
 
-.add:focus, .add:active {
-    border-color: #c21010;
+textarea {
+    margin-right: 10px;
 }
 
 .wrap-details {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.details, .remove, .edit-btn {
+.add-btn, .details, .remove, .edit-btn {
     width: 100px;
     height: 30px;
     padding: 5px;
@@ -93,14 +112,7 @@ textarea {
     display: none;
 }
 
-.edit {
-    margin: 0 15px;
-    outline: none;
-    border: 2px solid #5c5b5b;
-    transition: border 0.3s ease-in;
-}
-
-.edit:focus, .edit:active {
+textarea:focus, textarea:active, input:focus, input:active {
     border-color: #c21010;
 }
 
@@ -108,37 +120,61 @@ textarea {
     display: block;
 }
 
-@media (max-width: 820px) {
-    .wrap-details {
+@media (max-width: 1600px) {
+    .details-show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
     
     .details {
+        display: block;
+    }
+    
+    .todo-item input, .todo-item textarea {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .add-form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .todo-item input, .todo-item textarea {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 830px) {
+    .add-form input, .add-form textarea,.add-btn {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .add-form input, .add-form textarea {
+       width: 80%;
+       margin: 10px 0;
+    }
+
+    .todo-item button {
+        width: 80px;
+    }
+
+    .todo-item input, .todo-item textarea {
+        width: 80%;
         margin: 10px 0;
     }
-    
-    .details-show {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-}
 
-@media (max-width: 675px) {
     .remove, .edit-btn {
-        width: 75px;
-        height: 30px;
-    }
-}
-
-@media (max-width: 610px) {
-    .title {
-        font-size: 14px;
+        margin-top: 10px;
     }
 
-    .edit {
-        width: 70%;
-        margin-bottom: 10px;
+    p, .method {
+        font-size: 14px
     }
 }
