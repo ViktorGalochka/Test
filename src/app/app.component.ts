@@ -50,12 +50,28 @@ export class AppComponent {
     recipe.value = "";
   }
   
-  edit(dish,ingredients,recipe,todo) {
+  edit(editDish,editIngridients,editRecipe,todo) {
+    let prevDish;
+    let prevIngredients;
+    let prevRecipe;
     let index = this.todos.indexOf(todo);
-    if(index > -1) {
-      this.todos.splice(index,1,{dish:dish.value,ingredients:ingredients.value,recipe:recipe.value, isVisible : false, details: "Details"});
+    prevDish = this.todos[index].dish;
+    prevIngredients = this.todos[index].ingredients;
+    prevRecipe = this.todos[index].recipe;
+    if(editDish.value === "") {
+      editDish.value = prevDish;
     }
-    console.log(this.todos);
+    if(editIngridients.value === "") {
+      editIngridients.value = prevIngredients;
+    }
+    if (editRecipe.value === "") {
+      editRecipe.value = prevRecipe;
+    }
+    if(index > -1) {
+        this.todos.splice(index,1,{dish:editDish.value,ingredients:editIngridients.value, recipe:editRecipe.value, isVisible: false, details: "Details" });
+      
+    }
+    // console.log(this.todos);
   }
   
   changeCustoms(todo) { 

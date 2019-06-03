@@ -143,8 +143,21 @@ textarea:focus, textarea:active, input:focus, input:active {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+    
     .todo-item input, .todo-item textarea {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1130px) { 
+    .todo-item input, .todo-item textarea {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 915px) {
+    .add-btn {
         margin-top: 10px;
     }
 }
@@ -157,23 +170,18 @@ textarea:focus, textarea:active, input:focus, input:active {
 
 @media (max-width: 576px) {
     .add-form input, .add-form textarea {
-       width: 80%;
-       margin: 10px 0;
-    }
-
-    .todo-item button {
-        width: 80px;
-    }
-
-    .todo-item input, .todo-item textarea {
         width: 80%;
         margin: 10px 0;
     }
-
+    
+    .todo-item button {
+        width: 80px;
+    }
+    
     .remove, .edit-btn {
         margin-top: 10px;
     }
-
+    
     p, .method {
         font-size: 14px
     }

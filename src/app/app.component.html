@@ -18,7 +18,7 @@
         <div class="actions" [ngClass] ="{'details-show':todo.isVisible}">
           <input type="edit-dish-name" placeholder="Edit dish" #editDish>
           <input type="text" placeholder="Edit ingridients" #editIngridients>
-          <textarea class="edit-recipe" type="text" placeholder="Edit" #editRecipe></textarea>
+          <textarea class="edit-recipe" type="text" placeholder="Edit method" #editRecipe></textarea>
           <button class="edit-btn" (click)="edit(editDish,editIngridients,editRecipe,todo)">Edit</button>
           <button class="remove" (click)="remove(todo)">Remove</button>
         </div>
